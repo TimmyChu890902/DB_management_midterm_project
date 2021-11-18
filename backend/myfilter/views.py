@@ -125,7 +125,7 @@ def get_score(request):
 
     if request.method == 'POST':
         try:
-            group = request.data[0]['group']
+            group = request.data['group']
             cup = 1#"109椰林盃"
         except KeyError:
             return Response("1 parameter is all required.(group)", status=status.HTTP_400_BAD_REQUEST)
@@ -207,8 +207,8 @@ def get_individual(request):
 
     if request.method == 'POST':
         try:
-            unit = request.data[0]['unit']
-            name = request.data[0]['name']
+            unit = request.data['unit']
+            name = request.data['name']
         except KeyError:
             return Response("2 parameters are all required.(unit, name)", status=status.HTTP_400_BAD_REQUEST)
     archer = Archers.objects.filter(a_name=name, a_unit = unit)
@@ -252,8 +252,8 @@ def get_team(request):
 
     if request.method == 'POST':
         try:
-            unit = request.data[0]['unit']
-            name = request.data[0]['name']
+            unit = request.data['unit']
+            name = request.data['name']
         except KeyError:
             return Response("2 parameters are all required.(unit, name)", status=status.HTTP_400_BAD_REQUEST)
     archer = Archers.objects.filter(a_name=name, a_unit = unit)
@@ -296,10 +296,10 @@ def score_update(request):
         return Response("Content type should be 'application/json'.", status=status.HTTP_400_BAD_REQUEST)
     
     try:
-        tar = request.data[0]['target']
-        tx = request.data[0]['tenX']
-        x = request.data[0]['X']
-        sc = request.data[0]['score']
+        tar = request.data['target']
+        tx = request.data['tenX']
+        x = request.data['X']
+        sc = request.data['score']
         cup = 3
     except KeyError:
         return Response("4 parameters are all required.(target,tenX,X,score)", status=status.HTTP_400_BAD_REQUEST)
