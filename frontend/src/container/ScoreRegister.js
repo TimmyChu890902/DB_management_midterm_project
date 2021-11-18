@@ -1,14 +1,15 @@
 import React from 'react'
 import "./ScoreRegister.css"
 import ScoreMenu from './ScoreMenu'
-const ScoreRegister = () => {
+import ScoreBoard from './ScoreBoard'
+const ScoreRegister = ({setScheckResult, ScheckResult, setGroup, Group}) => {
     return (
         <div>
             <div className = "Sback">
                 <p className = "STitle">分數登錄</p>  
-                <ScoreMenu/>
+                <ScoreMenu setScheckResult = {setScheckResult} />
             </div>       
-            
+            <ScoreBoard setGroup = {setGroup} Group = {Group} />
         </div>
         
     )

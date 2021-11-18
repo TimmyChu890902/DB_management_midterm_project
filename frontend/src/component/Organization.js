@@ -8,7 +8,7 @@ const Organization = ({setPcheckResult, setUnit}) => {
     
     const [Org, setOrg] = useState([])
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/cups')
+        axios.get('http://127.0.0.1:8000/api/units')
         .then((res) => { 
           setOrg(res.data)
         })
@@ -30,7 +30,7 @@ const Organization = ({setPcheckResult, setUnit}) => {
             
                 >
                 {Org.map((Org)=>{
-                    return <Option value={Org['host']}>{Org['host']}</Option>
+                    return <Option value={Org['unit']}>{Org['unit']}</Option>
                 })}
             </Select>
         </div>

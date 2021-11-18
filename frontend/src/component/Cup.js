@@ -9,7 +9,7 @@ const { Option } = Select;
 const Cup = ({setGcheckResult, setCup}) => {
     const [Result, setResult] = useState([])
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/cups')
+        axios.get('http://127.0.0.1:8000/api/cups?format=json')
         .then((res) => { 
             setResult(res.data)
         })
@@ -31,7 +31,7 @@ const Cup = ({setGcheckResult, setCup}) => {
             
                 >
                 {Result.map((Result)=>{
-                    return <Option value={Result['cup']}>{Result['cup']}</Option>
+                    return <Option value={Result['cup_name']}>{Result['cup_name']}</Option>
                 })}
             </Select>
         </div>

@@ -35,35 +35,35 @@ const columns = [
     },
 ];
 
-const data = [
-    {
-        key:'1',
-        unit:'臺灣大學',
-        name:'王曉明',
-        tenX:20,
-        X:10,
-        total:353,
-        rank:1
-    },
-    {
-        key:'2',
-        unit:'臺灣大學',
-        name:'王小美',
-        tenX:15,
-        X:7,
-        total:330,
-        rank:2
-    },
-    {
-        key:'2',
-        unit:'臺灣大學',
-        name:'李大美',
-        tenX:15,
-        X:7,
-        total:360,
-        rank:4
-    },
-];
+// const data = [
+//     {
+//         key:'1',
+//         unit:'臺灣大學',
+//         name:'王曉明',
+//         tenX:20,
+//         X:10,
+//         total:353,
+//         rank:1
+//     },
+//     {
+//         key:'2',
+//         unit:'臺灣大學',
+//         name:'王小美',
+//         tenX:15,
+//         X:7,
+//         total:330,
+//         rank:2
+//     },
+//     {
+//         key:'2',
+//         unit:'臺灣大學',
+//         name:'李大美',
+//         tenX:15,
+//         X:7,
+//         total:360,
+//         rank:4
+//     },
+// ];
 
 const GroupResult = ({Cup, Group}) => {
     const [Cresult, setCresult] = useState([])

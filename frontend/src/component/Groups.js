@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react';
 
 const { Option } = Select;
 
-const Group = ({setGcheckResult, setGroup}) => {
+const Groups = ({setGcheckResult, setGroup}) => {
 
     const [ResultG, setResultG] = useState([])
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/groups')
+        axios.get('http://127.0.0.1:8000/api/groups?format=json')
         .then((res) => { 
             setResultG(res.data)
         })
@@ -23,7 +23,7 @@ const Group = ({setGcheckResult, setGroup}) => {
     }
 
     return (
-         <div>
+         <div style = {{display: "flex", justifyContent:"center", alignItems:"center"}}>
             <Select
                 
                 style={{ width: 200 }}
@@ -31,11 +31,11 @@ const Group = ({setGcheckResult, setGroup}) => {
             
                 >
                 {ResultG.map((ResultG)=>{
-                    return <Option value={ResultG['name']}>{ResultG['name']}</Option>
+                    return <Option value={ResultG['g_name']}>{ResultG['g_name']}</Option>
                 })}
             </Select>
         </div>
     )
 }
 
-export default Group
+export default Groups

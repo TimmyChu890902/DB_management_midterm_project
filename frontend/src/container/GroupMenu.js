@@ -1,8 +1,8 @@
 import React from 'react'
 import "./GroupSearch.css"
 import {Space, Button} from 'antd'
-import Group from '../component/Group'
-import Cup from '../component/Organization'
+import Groups from '../component/Groups'
+import Cup from '../component/Cup'
 const GroupMenu = ({setGcheckResult, setGroup, setCup}) => {
     const onClick = () => {
         setGcheckResult(true)
@@ -17,7 +17,7 @@ const GroupMenu = ({setGcheckResult, setGroup, setCup}) => {
                 </div>
                 <div className = "input">
                     <div className = "text">組別名稱</div>
-                    <Group setGcheckResult = {setGcheckResult} setGroup = {setGroup} />
+                    <Groups setGcheckResult = {setGcheckResult} setGroup = {setGroup} />
                 </div>   
                 <div className = "input">
                     <Button onClick = {onClick} style={{ width: 80 }}>查詢</Button>

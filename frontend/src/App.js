@@ -63,7 +63,7 @@ function App() {
       {homeCheck?<HomePage ToPersonalSerach = {ToPersonalSerach} ToGroupSearch = {ToGroupSearch} ToScoreRigister = {ToScoreRigister}/>:<></>}
       {PsearchCheck?<PersonalSearch setPcheckResult = {setPcheckResult} setUnit = {setUnit} setName = {setName} PcheckResult = {PcheckResult} Unit = {Unit} Name = {Name} />:<></>}
       {GsearchCheck?<GroupSearch setGcheckResult = {setGcheckResult} setCup = {setCup} setGroup = {setGroup} Cup = {Cup} Group = {Group} GcheckResult = {GcheckResult}/>:<></>}
-      {registerCheck?<ScoreRegister/>:<></>}
+      {registerCheck?<ScoreRegister setScheckResult = {setScheckResult} setGroup = {setGroup} ScheckResult = {ScheckResult} Group = {Group} />:<></>}
       
     </>
   );
