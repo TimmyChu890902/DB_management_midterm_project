@@ -140,5 +140,5 @@ class Team_ranks(models.Model):
     def __str__(self):
         return self.t
 
-
+#python manage.py shell
 #from myfilter.models import Cups, Groups, Archers, Individuals, Individual_ranks, Individual_scores, Teams, Team_scores, Team_ranks

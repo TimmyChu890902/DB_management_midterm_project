@@ -37,15 +37,24 @@ def all_units(request):
 
 
 
-
-
-
 @api_view(['GET'])
 def all_cups(request):
     if request.method == 'GET':
-        cups = Cups.objects.all()
-        serializer = CupsSerializer(cups, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        cups = Cups.objects.values('cup_name').order_by('-cup_id')
+        lst = []
+        for ele in cups:
+            data = {}
+            data['unit'] = ele['cup_name']
+            lst.append(data)
+        return Response(lst, status=status.HTTP_200_OK)
+
+
+# @api_view(['GET'])
+# def all_cups(request):
+#     if request.method == 'GET':
+#         cups = Cups.objects.all()
+#         serializer = CupsSerializer(cups, many=True)
+#         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
@@ -59,10 +68,18 @@ def all_groups(request):
 
 
 
-@api_view(['GET'])
-def get_scoreboard(request, tar):
-    
-    if request.method == 'GET':
+@api_view(['POST'])
+def get_scoreboard(request):
+    if 'application/json' not in request.content_type:
+        return Response("Content type should be 'application/json'.", status=status.HTTP_400_BAD_REQUEST)
+
+    if request.method == 'POST':
+        try:
+            tar = request.data['target']
+            # = 1#"109椰林盃"
+        except KeyError:
+            return Response("1 parameter is all required.(target)", status=status.HTTP_400_BAD_REQUEST)
+
         x = Cups.objects.values('cup_id').order_by('cup_id')
         l = len(x)
         latest_cup = x[l-1]['cup_id']

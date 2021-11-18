@@ -14,5 +14,6 @@ urlpatterns = [
     url('search/team', views.get_team),
     url('search/cup', views.get_cup),
     url('scoreboard/individual', views.score_update),
-    url(r'^scoreboard/(?P<tar>\w+)$', views.get_scoreboard),
+    url('scoreboard/target', views.get_scoreboard),
+    #url(r'^scoreboard/(?P<tar>\w+)$', views.get_scoreboard),
 ]
