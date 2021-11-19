@@ -2,10 +2,10 @@ import {useState} from 'react'
 import { Input, Space, Button} from 'antd'
 import "./ScoreRegister.css"
 import ScoreAssign from './ScoreAssign'
-const ScoreMenu = ({setScheckResult, Target, setTarget}) => {
+const ScoreMenu = ({setScheckResult, Target, setTarget, ScheckResult}) => {
     
     
-    const [ScoreReg, setScoreReg] = useState(false)
+    // const [ScoreReg, setScoreReg] = useState(false)
     // const [Currentset, setCurrentset] = useState(0)
     
     
@@ -15,7 +15,7 @@ const ScoreMenu = ({setScheckResult, Target, setTarget}) => {
     // },[])
 
     const HadleTarget = () =>{
-        setScoreReg(true)
+        setScheckResult(true)
     }
 
    
@@ -29,7 +29,7 @@ const ScoreMenu = ({setScheckResult, Target, setTarget}) => {
                         <div className = "text">靶位</div>
                         <Input onChange = {(e) => {
                             setTarget(e.target.value)
-                            setScoreReg(false)
+                            setScheckResult(false)
                             console.log(e.target.value)
                         }}/>
                     </div> 
@@ -41,7 +41,7 @@ const ScoreMenu = ({setScheckResult, Target, setTarget}) => {
                     </div>
                 </Space>
             </div>
-            {ScoreReg?<ScoreAssign setScheckResult = {setScheckResult} Target = {Target}/>:<></>}
+            {ScheckResult?<ScoreAssign setScheckResult = {setScheckResult} Target = {Target}/>:<></>}
         </>
     )
 }

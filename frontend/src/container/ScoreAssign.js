@@ -41,10 +41,13 @@ const ScoreAssign = ({Target, setScheckResult}) => {
             // console.log(IndividualsSet['set'])
 
         })
-        .catch((error) => { console.log(error) })
+        .catch((error) => { 
+            console.log(error)
+            setScheckResult(false)
+        })
     },[])
 
-     const ScoreSubmit = async () => {
+     const ScoreSubmit = () => {
         let X = 0
         let TenX = 0
         let score = 0
@@ -92,17 +95,33 @@ const ScoreAssign = ({Target, setScheckResult}) => {
         score = Total(Score1, Score2, Score3, Score4, Score5, Score6)
 
         setIndividualsSet(IndividualsSet + 1)
-        await axios.post('http://127.0.0.1:8000/scoreboard/individual', {
-        "target": Target,
-        "tenX":TenX,
-        "X":X,
-        "score":score
+        if(IndividualsSet === 1){
+            axios.put('http://127.0.0.1:8000/scoreboard/individual', {
+                "target": Target,
+                "tenX":TenX,
+                "X":X,
+                "score":score
 
-        })
-        .then((res) => { 
-            
-        })
-        .catch((error) => { console.log(error) })
+                })
+                .then((res) => { 
+                    
+                })
+                .catch((error) => { console.log(error) })
+        }
+        else{
+            axios.post('http://127.0.0.1:8000/scoreboard/individual', {
+                "target": Target,
+                "tenX":TenX,
+                "X":X,
+                "score":score
+        
+                })
+                .then((res) => { 
+                    
+                })
+                .catch((error) => { console.log(error) })
+        }
+        
     }
 
     return (
@@ -110,7 +129,7 @@ const ScoreAssign = ({Target, setScheckResult}) => {
                 <Space className='menu-set'>
                     
                     <div className = "input">
-                        <div className = "text">第{IndividualsSet}波</div>
+                        <div className = "text">第{IndividualsSet > 5?"X":IndividualsSet + 1}波</div>
                     </div>
                     <div className = "input">
                         <div className = "text">分數1</div>
@@ -157,7 +176,7 @@ const ScoreAssign = ({Target, setScheckResult}) => {
                         <div className = "text">總分<br/>{Total(Score1, Score2, Score3, Score4, Score5, Score6)}分</div>
                     </div>    
                     <div className = "input">
-                        {IndividualsSet > 6?<Button disabled style={{ width: 80 }}>登記</Button>:<Button onClick = {() => {setScheckResult(true)}} style={{ width: 80 }}>登記</Button>}
+                        {IndividualsSet > 5?<Button disabled style={{ width: 80 }}>登記</Button>:<Button onClick = {ScoreSubmit} style={{ width: 80 }}>登記</Button>}
                     </div>
                 </Space>
             </div>

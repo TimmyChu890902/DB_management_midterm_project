@@ -15,24 +15,25 @@ div.Homeback {
     font-size:70px
 }
 button{
-    height:400px;
-    width: 400px;
+    height:350px;
+    width: 350px;
     margin: auto;
-    border-radius: 12px;
+    border-radius: 200px;
     font-size: 50px;
 }
 .buttonDiv{
+    margin-top: 150px;
     height: 400px;
     padding: 50px;
     display:flex;         
     align-items: center;
 }
 #color1{
-    background-color:rgb(245, 218, 131);
+    background-color:rgb(238, 169, 169);
 }
 #color2{
-    background-color:rgba(233, 109, 109, 0.986);
+    background-color:rgba(219, 238, 175, 0.986);
 }
 #color3{
-    background-color:rgb(98, 171, 238);
+    background-color:rgb(174, 215, 252);
 }

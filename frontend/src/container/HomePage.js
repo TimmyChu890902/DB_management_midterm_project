@@ -1,5 +1,6 @@
 import React from 'react'
 import "./HomePage.css"
+
 // import { Button } from 'antd';
 const HomePage = ({ToPersonalSerach, ToGroupSearch, ToScoreRigister}) => {
 
@@ -15,6 +16,8 @@ const HomePage = ({ToPersonalSerach, ToGroupSearch, ToScoreRigister}) => {
                     <button id = "color2" onClick = {ToPersonalSerach} >個人成績查詢</button>
                     <button id = "color3" onClick = {ToScoreRigister}>分數登錄</button>
                 </div>
+
+
             </div>
             
         </div>

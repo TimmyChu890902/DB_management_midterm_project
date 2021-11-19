@@ -19,6 +19,8 @@ function App() {
   const [Group, setGroup] = useState("")
   const [Target, setTarget] = useState("")
 
+  
+  const [LiveResult, setLiveResult] = useState(false)
   const [PcheckResult, setPcheckResult] = useState(false)
   const [GcheckResult, setGcheckResult] = useState(false)
   const [ScheckResult, setScheckResult] = useState(false)
@@ -64,7 +66,7 @@ function App() {
       {homeCheck?<HomePage ToPersonalSerach = {ToPersonalSerach} ToGroupSearch = {ToGroupSearch} ToScoreRigister = {ToScoreRigister}/>:<></>}
       {PsearchCheck?<PersonalSearch setPcheckResult = {setPcheckResult} setUnit = {setUnit} setName = {setName} PcheckResult = {PcheckResult} Unit = {Unit} Name = {Name} />:<></>}
       {GsearchCheck?<GroupSearch setGcheckResult = {setGcheckResult} setCup = {setCup} setGroup = {setGroup} Cup = {Cup} Group = {Group} GcheckResult = {GcheckResult}/>:<></>}
-      {registerCheck?< ScoreRegister setGcheckResult = {setScheckResult} setTarget = {setTarget} setScheckResult = {setScheckResult} setGroup = {setGroup} GcheckResult = {GcheckResult} ScheckResult = {ScheckResult} Group = {Group} Target = {Target}/>:<></>}
+      {registerCheck?< ScoreRegister setLiveResult = {setLiveResult} setTarget = {setTarget} setScheckResult = {setScheckResult} setGroup = {setGroup} LiveResult = {LiveResult} ScheckResult = {ScheckResult} Group = {Group} Target = {Target}/>:<></>}
       
     </>
   );

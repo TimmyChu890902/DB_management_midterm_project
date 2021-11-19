@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 const { Option } = Select;
 
-const LiveSearchGroup = ({setGcheckResult, setGroup, GcheckResult}) => {
+const LiveSearchGroup = ({setLiveResult, setGroup, LiveResult}) => {
 
     const [ResultG, setResultG] = useState([])
     useEffect(() => {
@@ -18,14 +18,16 @@ const LiveSearchGroup = ({setGcheckResult, setGroup, GcheckResult}) => {
 
     const onChange = (value) => {
         console.log(`selected ${value}`)
-        setGcheckResult(true)
+        setLiveResult(true)
         setGroup(value) 
-        console.log(GcheckResult)
+        console.log(LiveResult)
     }
-    const onDropdownVisibleChange = () => {
+    const onDropdownVisibleChange = (status) => {
+        if(status){
+            console.log("哭阿")
+            setLiveResult(false)
+        }
         
-        console.log("哭阿")
-        setGcheckResult(false)
         
     }
     return (
@@ -34,7 +36,7 @@ const LiveSearchGroup = ({setGcheckResult, setGroup, GcheckResult}) => {
                 
                 style={{ width: 200 }}
                 onChange={onChange}
-                onFocus = {onDropdownVisibleChange}
+                onDropdownVisibleChange = {onDropdownVisibleChange}
                 >
                 {ResultG.map((ResultG)=>{
                     return <Option value={ResultG['g_name']}>{ResultG['g_name']}</Option>

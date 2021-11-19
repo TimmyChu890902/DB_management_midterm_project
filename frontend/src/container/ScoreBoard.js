@@ -4,14 +4,14 @@ import LiveSearchGroup from '../component/LiveSearchGroup'
 import "./ScoreRegister.css"
 
 
-const ScoreBoard = ({setGcheckResult, setGroup, Group, GcheckResult}) => {
+const ScoreBoard = ({setLiveResult, setGroup, Group, LiveResult}) => {
     return (
         <div className = "liveBoard">
             <p style = {{marginTop: "5%", marginBottom:"1%", textAlign:"Center"}}>110椰林盃</p>
 
-            <LiveSearchGroup setGcheckResult = {setGcheckResult} setGroup = {setGroup} GcheckResult = {GcheckResult}/>
+            <LiveSearchGroup setLiveResult = {setLiveResult} setGroup = {setGroup} LiveResult = {LiveResult}/>
 
-            {GcheckResult?<LiveRanking Group = {Group}/>:<></>}
+            {LiveResult?<LiveRanking Group = {Group}/>:<></>}
         </div>
     )
 }
