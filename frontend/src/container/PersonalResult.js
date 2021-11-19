@@ -167,7 +167,7 @@ const PersonalResult = ({Name, Unit}) => {
       .then((res) => { 
         setPresult(res.data)
       })
-      .catch((error) => { console.log(error) })
+      .catch((error) => { console.log(error) });
 
       axios.post('http://127.0.0.1:8000/api/search/team', {
         "unit": Unit,

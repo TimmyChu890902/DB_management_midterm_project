@@ -83,7 +83,7 @@ def get_scoreboard(request):
         x = Cups.objects.values('cup_id').order_by('cup_id')
         l = len(x)
         latest_cup = x[l-1]['cup_id']
-        k = Individuals.objects.filter(cup_id = latest_cup, target = tar)
+        k = Individuals.objects.filter(cup_id = latest_cup-1, target = tar)
         if len(k) > 0:
             m = k.values('i_id')
             if len(m) > 0: 
@@ -143,7 +143,7 @@ def get_score(request):
     if request.method == 'POST':
         try:
             group = request.data['group']
-            cup = 1#"109椰林盃"
+            cup = 1#"108椰林盃"
         except KeyError:
             return Response("1 parameter is all required.(group)", status=status.HTTP_400_BAD_REQUEST)
 

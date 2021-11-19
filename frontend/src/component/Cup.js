@@ -31,7 +31,7 @@ const Cup = ({setGcheckResult, setCup}) => {
             
                 >
                 {Result.map((Result)=>{
-                    return <Option value={Result['cup_name']}>{Result['cup_name']}</Option>
+                    return <Option value={Result['unit']}>{Result['unit']}</Option>
                 })}
             </Select>
         </div>

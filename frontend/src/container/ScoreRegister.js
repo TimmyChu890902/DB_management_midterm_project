@@ -2,14 +2,14 @@ import React from 'react'
 import "./ScoreRegister.css"
 import ScoreMenu from './ScoreMenu'
 import ScoreBoard from './ScoreBoard'
-const ScoreRegister = ({setScheckResult, ScheckResult, setGroup, Group}) => {
+const ScoreRegister = ({setGcheckResult, setTarget, setScheckResult, GcheckResult,  ScheckResult, setGroup, Group, Target}) => {
     return (
         <div>
             <div className = "Sback">
                 <p className = "STitle">分數登錄</p>  
-                <ScoreMenu setScheckResult = {setScheckResult} />
+                <ScoreMenu setScheckResult = {setScheckResult} setTarget = {setTarget} Target = {Target} />
             </div>       
-            <ScoreBoard setGroup = {setGroup} Group = {Group} />
+            <ScoreBoard setGcheckResult = {setGcheckResult} GcheckResult = {GcheckResult} setGroup = {setGroup} Group = {Group} />
         </div>
         
     )

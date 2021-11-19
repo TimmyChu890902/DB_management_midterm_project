@@ -6,9 +6,9 @@ import "./PersonalSearch.css"
 
 
 const PersonalMenu = ({setPcheckResult, setName, setUnit}) => {
-    const ChangeName = (value) => {
-        console.log(value)
-        setName(value)
+    const ChangeName = (e) => {
+        console.log(e.target.value)
+        setName(e.target.value)
         setPcheckResult(false)
     } 
     const onClick = () => {
