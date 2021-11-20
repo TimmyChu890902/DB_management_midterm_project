@@ -86,14 +86,14 @@ def get_scoreboard(request):
         k = Individuals.objects.filter(cup_id = latest_cup, target = tar)
         if len(k) > 0:
             m = k.values('i_id')
-            if len(m) > 0: 
-                id = m[0]['i_id']
-                b = Individual_scores.objects.filter(i_id = id)
+            id = m[0]['i_id']
+            b = Individual_scores.objects.filter(i_id = id)
+            if len(b) > 0: 
                 serializer = ScoreboardSerializer(b, many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:#except Individual_scores.DoesNotExist: #bug
-                data = {}
                 result = []
+                data = {}
                 data['set'] = 0
                 result.append(data)
                 return Response(result, status=status.HTTP_200_OK)

@@ -36,7 +36,7 @@ const ScoreAssign = ({Target, setScheckResult}) => {
         "target": Target
         })
         .then((res) => { 
-            console.log(res.data[0])
+            console.log(res.data)
             setIndividualsSet(res.data[0]['set'])
             // console.log(IndividualsSet['set'])
 
