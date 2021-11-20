@@ -31,24 +31,40 @@ function App() {
     setPsearchCheck(false)
     setGsearchCheck(false)
     setRegisterCheck(false)
+    setLiveResult(false)
+    setPcheckResult(false)
+    setGcheckResult(false)
+    setScheckResult(false)
   }
   const ToPersonalSerach = () => {
     setHomecheck(false)
     setPsearchCheck(true)
     setGsearchCheck(false)
     setRegisterCheck(false)
+    setLiveResult(false)
+    setPcheckResult(false)
+    setGcheckResult(false)
+    setScheckResult(false)
   }
   const ToGroupSearch = () => {
     setHomecheck(false)
     setPsearchCheck(false)
     setGsearchCheck(true)
     setRegisterCheck(false)
+    setLiveResult(false)
+    setPcheckResult(false)
+    setGcheckResult(false)
+    setScheckResult(false)
   }
   const ToScoreRigister = () => {
     setHomecheck(false)
     setPsearchCheck(false)
     setGsearchCheck(false)
     setRegisterCheck(true)
+    setLiveResult(false)
+    setPcheckResult(false)
+    setGcheckResult(false)
+    setScheckResult(false)
   }
 
   return (
