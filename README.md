@@ -34,18 +34,18 @@
 ```shell
 # for mac
 cd backend
-python3 -m venv tutorial-env #建立虛擬環境 #-m: module-name
-source tutorial-env/bin/activate #啟動虛擬環境 for mac
+python3 -m venv my-env #建立虛擬環境 #-m: module-name
+source my-env/bin/activate #啟動虛擬環境 for mac
 ```
 
 ```shell
 # for windows
 cd backend
-python -m venv tutorial-env #建立虛擬環境 #-m: module-name
-tutorial-env\Scripts\activate.bat #啟動虛擬環境 for windows
+python -m venv my-env #建立虛擬環境 #-m: module-name
+my-env\Scripts\activate.bat #啟動虛擬環境 for windows
 ```
 
-成功的話，command prompt 前面應該會多出 `(tutorial-env)` 的字樣，代表已經進入這個虛擬環境。如果未來你想退出這個虛擬環境，可以輸入 `deactivate`。
+成功的話，command prompt 前面應該會多出 `(my-env)` 的字樣，代表已經進入這個虛擬環境。如果未來你想退出這個虛擬環境，可以輸入 `deactivate`。
 接著下載所需套件，需要的套件與版本已定義在 `requirements.txt`，下載完輸入`pip list`檢查所有用 `pip` 下載的套件。
 
 ```shell
@@ -71,26 +71,8 @@ sqlparse            0.4.1
 
 安裝完套件後複製 `.env.example` 的內容到 `.env`。
 
->`.env`裡存的是環境變數，裡面通常會放一些機密資訊（如 `SECRET_KEY`、資料庫資訊等），這種檔案通常不會傳上版本控制系統（如 Github），但此為教學專案為了方便講解上傳，同學們實作專案時記得避免。
+>`.env`裡存的是環境變數，請將 `.env` 當中的變數(DATABASE_URL)改成符合你電腦資料庫的值。
 
-```shell
-# for mac
-cp .env.example .env
-```
-
-```shell
-# for windows
-copy .env.example .env
-```
-
-接著可以將 `.env` 當中的變數改成符合你電腦資料庫的值。
-
-```shell
-SECRET_KEY={aaaaaaaaa}
-DEBUG=True
-ALLOWED_HOSTS=.localhost,127.0.0.1
-DATABASE_URL={postgres://USER:PASSWORD@HOST:PORT/NAME}
-```
 
 最後，同步資料庫並啟動 backend server。
 
@@ -99,8 +81,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-用瀏覽器打開  http://127.0.0.1:8000/api/stations ，如果有順利拿到資源表示後端起成功。
-![](img/api.png)
+用瀏覽器打開  http://127.0.0.1:8000/api/cups ，如果有順利拿到資源表示後端起成功。
 
 ## Frontend
 
