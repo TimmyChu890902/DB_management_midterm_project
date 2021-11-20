@@ -95,34 +95,21 @@ const ScoreAssign = ({Target, setScheckResult}) => {
         score = Total(Score1, Score2, Score3, Score4, Score5, Score6)
 
         setIndividualsSet(IndividualsSet + 1)
-        if(IndividualsSet === 1){
-            axios.put('http://127.0.0.1:8000/scoreboard/individual', {
-                "target": Target,
-                "tenX":TenX,
-                "X":X,
-                "score":score
+        
+        axios.post('http://127.0.0.1:8000/scoreboard/individual', {
+            "target": Target,
+            "tenX":TenX,
+            "X":X,
+            "score":score
+    
+            })
+            .then((res) => { 
+                
+            })
+            .catch((error) => { console.log(error) })
 
-                })
-                .then((res) => { 
-                    
-                })
-                .catch((error) => { console.log(error) })
-        }
-        else{
-            axios.post('http://127.0.0.1:8000/scoreboard/individual', {
-                "target": Target,
-                "tenX":TenX,
-                "X":X,
-                "score":score
-        
-                })
-                .then((res) => { 
-                    
-                })
-                .catch((error) => { console.log(error) })
-        }
-        
-    }
+    
+}
 
     return (
         <div className = "header">
