@@ -17,14 +17,23 @@
 - **API endpoint**: http://127.0.0.1:8000/api
 - **九個接口**
     > Get/api/units
+    
     > Get/api/cups
+    
     > Get/api/groups
+    
     > Post/api/scoreboard/target
+    
     > Post/api/scoreboard/individual
+    
     > Post/api/liveScore
+    
     > Post/api/search/individual
+    
     > Post/api/search/team
+    
     > Post/api/search/cup
+    
 
 ## Backend
 
